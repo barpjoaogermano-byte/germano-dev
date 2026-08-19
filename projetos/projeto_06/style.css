@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px;
+}
+
+h1 {
+    font-size:42px;
+    margin-bottom: 30px;
+    color: #ffffff;
+    text-shadow: 0 0 5px #ffffff,
+    0 0 15px #000000,
+    0 0 30px #000000;
+}
+
+.inputText {
+    width: 350px;
+    padding: 15px;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    font-size: 16px;
+}
+
+.inputText::placeholder {
+    color: lightgray;
+}
+
+.btnEnviar {
+    margin-top: 10px;
+    margin-left: 10px;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btnEnviar:hover {
+    background: #fff;
+    transform: scale(1.05);
+}
+
+.lista {
+    width: 500px;
+    margin-top: 40px;
+}
+
+.lista li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 18px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.lista li button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: lightcoral;
+    color: white;
+    cursor: pointer;
+    transition: 0.3;
+}
+
+.lista li button:hover {
+    background-color: lightcoral;
+    transform: scale(1.05);
+}
