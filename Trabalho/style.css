@@ -1,0 +1,178 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0A1B2D;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.jmHeader {
+    position: relative;
+    background-color: #081728;
+    padding: 20px 0 10px 0;
+    border-bottom: 4px solid #051222;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+img {
+    position: absolute;
+    left: 480px;
+    top: -5px;
+    width: 120px;
+}
+
+.jmTentativas {
+    background-color: #0A1B2D;
+    border: 2px solid #051222;
+    border-radius: 20px;
+    padding: 12px 40px;
+    width: 220px;
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+.jmTentativas h3 {
+    color: #9FB5C9;
+    font-size: 0.9rem;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+
+.jmH1 {
+    color: #2B4056;
+    font-size: 2.4rem;
+    font-weight: bold;
+    margin-top: 2px;
+}
+
+.jmGreen {
+    color: #238E4B;
+}
+
+.jmPheader {
+    color: #9FB5C9;
+    font-size: 0.95rem;
+    margin-top: 4px;
+    text-align: center;
+}
+
+.jmMain {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.jmTermo {
+    background-color: #081625;
+    border: 3px solid #000612;
+    border-radius: 12px;
+    width: 380px;
+    padding: 18px 18px 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+.jmInput {
+    width: 100%;
+    max-width: 280px;
+    height: 44px;
+    background-color: #06111F;
+    border: 2px solid #2B4056;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.2s;
+}
+.jmInput::placeholder {
+    color: #5D5D5D;
+    font-weight: normal;
+    text-transform: none;
+}
+.jmInput:focus {
+    border-color: #238E4B;
+}
+
+.jmBtnEnviar {
+    width: 100%;
+    max-width: 280px;
+    height: 38px;
+    background-color: #2B4056;
+    border: 3px solid #06111F;
+    border-radius: 10px;
+    color: #081625;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.jmBtnEnviar:hover {
+    background-color: #3a5770;
+}
+.jmBtnEnviar:disabled,
+.jmInput:disabled {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.jmQuadrado {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 4px;
+    width: 100%;
+    align-items: center;
+}
+
+.linhaTabuleiro {
+    display: flex;
+    gap: 6px;
+}
+
+.casa {
+    width: 48px;
+    height: 48px;
+    background-color: #06111F;
+    border: 2px solid #2B4056;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+    transition: 0.15s;
+}
+
+
+.certo {
+    background-color: #238E4B;
+    border-color: #238E4B;
+    animation: flip 0.4s ease;
+}
+.presente {
+    background-color: #B59F3B;
+    border-color: #B59F3B;
+    animation: flip 0.4s ease;
+}
+.erro {
+    background-color: #3A3A3C;
+    border-color: #3A3A3C;
+    animation: flip 0.4s ease;
+}
