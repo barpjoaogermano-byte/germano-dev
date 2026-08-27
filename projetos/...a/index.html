@@ -8,13 +8,12 @@
 </head>
 <body>
     <header class="jmHeader">
+        <img src="./assets/among-02.png" alt="">
         <div class="jmTentativas">
             <h3>TENTATIVAS</h3>
             <h1 class="jmH1"><span class="jmGreen">0</span>/6</h1>
-            <img src="./assets/among-02.png" alt="">
         </div>
         <p class="jmPheader">Adivinhe a palavra secreta de 5 letras.</p>
-        <button class="jmReset"></button>
     </header>
 
     <main class="jmMain">
@@ -24,19 +23,22 @@
         </div>
     </main>
 
-    <div class="jmModal jmModalVitoria">
-        <button class="jmFecharModal"></button>
-        <div class="jmContainer">
-            <h1>Vitória</h1>
-            <img src="./assets/background-victory 1.png" alt="" class="jmAmongVitoria">
+    <!-- Modal de Vitória -->
+    <div class="modal modal-vitoria" id="modalVitoria">
+        <div class="container">
+            <a href="#" class="btnFechar">❌</a>
+            <h1>🎉 PARABÉNS!</h1>
+            <p>Você acertou a palavra secreta!</p>
         </div>
     </div>
 
-    <div class="jmModal jmModalDerrota">
-        <button class="jmFecharModal"></button>
-        <div class="jmContainer">
-            <h1>Derrota</h1>
-            <img src="./assets/background-derrota.png" alt="" class="jmAmongDerrota">
+    <!-- Modal de Derrota -->
+    <div class="modal modal-derrota" id="modalDerrota">
+        <div class="container">
+            <a href="#" class="btnFechar">❌</a>
+            <h1>😢 QUE PENA!</h1>
+            <p>Acabaram as tentativas.</p>
+            <p>A palavra era: <strong id="palavraRevelada"></strong></p>
         </div>
     </div>
 

@@ -11,15 +11,35 @@ const listaPalavras = [
     "SABOR"
 ];
 
-let palavraCorreta = listaPalavras[Math.floor(Math.random() * listaPalavras.length)];
-
 const tabuleiro = document.querySelector(".jmTermo");
 const inputText = document.querySelector(".jmInput");
 const btnEnviar = document.querySelector(".jmBtnEnviar");
 const contador = document.querySelector(".jmH1");
-const btnReset = document.querySelector(".jmReset");
+const modalVitoria = document.getElementById("modalVitoria");
+const modalDerrota = document.getElementById("modalDerrota");
+const palavraRevelada = document.getElementById("palavraRevelada");
 
 let tentativaAtual = 0;
+let palavraCorreta = "";
+
+function iniciarJogo() {
+    palavraCorreta = listaPalavras[Math.floor(Math.random() * listaPalavras.length)];
+    tentativaAtual = 0;
+    contador.innerHTML = `<span class="jmGreen">0</span>/6`;
+
+    btnEnviar.disabled = false;
+    inputText.disabled = false;
+    btnEnviar.style.opacity = "1";
+    inputText.style.opacity = "1";
+
+    inputText.value = "";
+    inputText.focus();
+
+    criarTabuleiro();
+
+    modalVitoria.classList.remove("is-active");
+    modalDerrota.classList.remove("is-active");
+}
 
 function criarTabuleiro() {
     const antigo = document.querySelector(".jmQuadrado");
@@ -41,33 +61,30 @@ function criarTabuleiro() {
     tabuleiro.appendChild(quadrado);
 }
 
-function reiniciarJogo() {
-    palavraCorreta = listaPalavras[Math.floor(Math.random() * listaPalavras.length)];
-    tentativaAtual = 0;
-    contador.innerHTML = `<span class="jmGreen">0</span>/6`;
-
-    btnEnviar.disabled = false;
-    inputText.disabled = false;
-    btnEnviar.style.opacity = "1";
-    inputText.style.opacity = "1";
-
-    inputText.value = "";
-    inputText.focus();
-
-    criarTabuleiro();
-}
-
-criarTabuleiro();
-
 btnEnviar.addEventListener("click", verificarPalavra);
 inputText.addEventListener("keydown", (e) => {
     if (e.key === "Enter") verificarPalavra();
 });
 
-btnReset.addEventListener("click", reiniciarJogo);
+document.querySelectorAll(".btnFechar").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        iniciarJogo();
+    });
+});
 
 function verificarPalavra() {
     const palavra = inputText.value.trim().toUpperCase();
+
+    if (palavra.length !== 5) {
+        alert("Digite uma palavra com 5 letras!");
+        return;
+    }
+    if (tentativaAtual >= 6) {
+        alert("Você já usou todas as tentativas!");
+        return;
+    }
+
     const linhas = document.querySelectorAll(".linhaTabuleiro");
     const linhaAtual = linhas[tentativaAtual];
     const casas = linhaAtual.children;
@@ -89,9 +106,22 @@ function verificarPalavra() {
 
     inputText.value = "";
     inputText.focus();
+
+    if (palavra === palavraCorreta) {
+        modalVitoria.classList.add("is-active");
+        finalizarJogo();
+    } else if (tentativaAtual === 6) {
+        palavraRevelada.textContent = palavraCorreta;
+        modalDerrota.classList.add("is-active");
+        finalizarJogo();
+    }
 }
 
 function finalizarJogo() {
     btnEnviar.disabled = true;
     inputText.disabled = true;
+    btnEnviar.style.opacity = "0.5";
+    inputText.style.opacity = "0.5";
 }
+
+iniciarJogo();

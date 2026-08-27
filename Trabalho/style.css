@@ -25,9 +25,26 @@ body {
 
 img {
     position: absolute;
-    left: 480px;
-    top: -5px;
+    left: -150px;
+    top: -20px;
     width: 120px;
+}
+
+.jmReset {
+    background-image: url(./assets/return.png);
+    position: absolute;
+    width: 43.17px;
+    height: 43.17px;
+    cursor: pointer;
+    top: 20px;
+    right: 40.83px;
+    bottom: 139.83px;
+    border: none;
+    background-color: transparent;
+}
+
+.jmReset:hover {
+    background-image: url(./assets/return-hover.png);
 }
 
 .jmTentativas {
@@ -38,6 +55,7 @@ img {
     width: 220px;
     text-align: center;
     margin-bottom: 6px;
+    position: relative;
 }
 
 .jmTentativas h3 {
@@ -97,7 +115,6 @@ img {
     font-weight: bold;
     text-align: center;
     text-transform: uppercase;
-    transition: 0.2s;
 }
 .jmInput::placeholder {
     color: #5D5D5D;
@@ -119,12 +136,11 @@ img {
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-    transition: 0.2s;
 }
 .jmBtnEnviar:hover {
     background-color: #3a5770;
 }
-.jmBtnEnviar:disabled,
+
 .jmInput:disabled {
     opacity: 0.5;
     cursor: pointer;
@@ -157,22 +173,39 @@ img {
     font-weight: bold;
     color: #ffffff;
     text-transform: uppercase;
-    transition: 0.15s;
 }
 
 
 .certo {
     background-color: #238E4B;
     border-color: #238E4B;
-    animation: flip 0.4s ease;
 }
 .presente {
     background-color: #B59F3B;
     border-color: #B59F3B;
-    animation: flip 0.4s ease;
 }
 .erro {
     background-color: #3A3A3C;
     border-color: #3A3A3C;
-    animation: flip 0.4s ease;
+}
+
+.jmModal {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(./assets/background-victory\ 1.png);
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.jmModal.is-active {
+    display: flex;
+}
+
+.jmContainer {
+    background-image: url(./assets/background-victory\ 1.png);
+
 }
